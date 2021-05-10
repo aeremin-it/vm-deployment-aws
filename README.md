@@ -11,10 +11,15 @@ Use the following commands to install the required packages:
 
 `pip3 install --user pyyaml`
 
-1. Use `aws configure` to configure access key and default region for your IAM user. The script uses the default network parameters. Open port 22 with inbound rules in the default security group.
+1. Use `aws configure` to configure access key and default region for your IAM user. 
+2. The script uses the default network parameters. Open port 22 with inbound rules in the default security group at same region as in point 1.
 
-2. Copy files from current repository on your created EC2 machine.
-3. Change the access permissions to users' private keys.
+3. Copy files from current repository on your created EC2 machine.
+
+`wget -P ~/ https://github.com/aeremin-it/vm-deployment-aws/archive/refs/heads/main.zip`
+`unzip ~/main.zip`
+
+4. Change the access permissions to users' private keys.
 
     `chmod 600 user1`
 
