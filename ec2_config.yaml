@@ -1,0 +1,28 @@
+
+---
+# This YAML configuration specifies a server with two volumes and two users
+server:
+  description: Amazon Linux 2 AMI *
+  owner_alias: amazon
+  ebs.volume_type: gp2
+  instance_type: t2.micro
+  ami_type: amzn2*
+  architecture: x86_64
+  root_device_type: ebs
+  virtualization_type: hvm
+  min_count: 1
+  max_count: 1
+  volumes:
+    - device: /dev/xvda
+      size_gb: 10
+      type: ext4
+      mount: /
+    - device: /dev/xvdf
+      size_gb: 100
+      type: xfs
+      mount: /data
+  users:
+    - login: user1
+      ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDD086FWIPD5kCPViDxzuHXJljhiPdyMiQvA6MbYx7vTXgisJ7CHlZVnxK3E3eR63UZg6YknLf1Pq7XZGjOTp6dRpCVXbb38zMX5zxbhAPBHHwQ8zach+vLJ/8WkcEJFPHG8oPp3xoo07u3Hu5rbDL6FgVRQrTCMKhud6FfeOyTRzrD8RM7ZLm9GUwET3N1GcwL/UrJzqUFnGSz1DVIt/tovbKv18Uau89mJFvUM+jkp/pIb1RvO1lKHfcLFacXuQSWXf4awCzkH6+k85FskLV/RxN37HQ9J9xePZM4I+4mpgeMyzdAvYAKy05huZCJJCZvuHFPATnsHFpovtTD0i/l user1@localhost
+    - login: user2
+      ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDDih1uiKP3dEB1XBiKwYb02/oD6LbYBBeGPvjIMkei6dvvdYne541GrgOYHqOghPFe2TKgb4gskCraJ2XA0LPiptg1G0FRowHjEq6sQiZtKKA0MDugB0gbtajOS+KXr6fv0xplhxY0m8DkQV/4wPQR071qq7Maml6rKfTZKXEBP/KVx/NTU+DDoLj+oOMLvF5stQu/QET8Lo8Y3x+PYdDCFd8ImR99yFLfR+FjAvs9AZKdhKbMws1Ev5FY9QQCEvW4mRlbiKxOKIi7r64OpCNsDusECfyjCNpbUXHrvkOgYnPFK6oxX1QBgQEGQaDMPyXk/x23fxe0tdXTAX5iOpZz user2@localhost
