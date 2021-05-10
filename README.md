@@ -17,6 +17,7 @@ Use the following commands to install the required packages:
 3. Copy files from current repository on your created EC2 machine.
 
 `wget -P ~/ https://github.com/aeremin-it/vm-deployment-aws/archive/refs/heads/main.zip`
+
 `unzip ~/main.zip`
 
 4. Change the access permissions to users' private keys.
